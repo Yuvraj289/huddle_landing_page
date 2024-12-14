@@ -1,0 +1,273 @@
+/* root */
+:root {
+  --clr-Pink: #ff52bf;
+  --clr-Very-Pale-Cyan: #ebfbff;
+  --clr-Very-Dark-Cyan: #00252e;
+  --clr-Grayish-Blue: #808d99;
+
+  --ff-body: "Poppins", sans-serif;
+  --ff-heading: "Open sans", sans-serif;
+  --fs-heading: 2.25rem;
+  --fs-body: 0.85rem;
+  --fw-400: 400;
+  --fw-600: 600;
+  --fw-700: 700;
+}
+
+/* reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: var(--clr-Very-Pale-Cyan);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1,
+h2 {
+  line-height: 1.4;
+  font-weight: var(--fw-600);
+  color: var(--clr-Very-Dark-Cyan);
+}
+
+body {
+  font-family: var(--ff-body);
+  font-weight: var(--fw-400);
+  font-size: var(--fs-body);
+  color: var(--clr-Grayish-Blue);
+  line-height: 1.6;
+}
+
+button {
+  font: inherit;
+  font-weight: var(--fw-600);
+  color: var(--clr-Very-Pale-Cyan);
+  padding: 0.5rem 2.5rem;
+  border-radius: 999px;
+  border: none;
+  background: var(--clr-Pink);
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  color: var(--clr-Very-Pale-Cyan);
+  background: hsl(322, 100%, 76%);
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+}
+
+.block-title {
+  font-size: 1.25rem;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  color: var(--clr-Very-Dark-Cyan);
+}
+
+.cta-heading {
+  font-size: 1.125rem;
+  font-weight: var(--fw-600);
+  color: var(--clr-Very-Dark-Cyan);
+  margin-bottom: 1rem;
+}
+
+.hero-content,
+.block-content,
+.call-to-action {
+  text-align: center;
+}
+
+.copyright {
+  display: block;
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+/* component */
+.cta-btn {
+  color: var(--clr-Very-Dark-Cyan);
+  background: transparent;
+  box-shadow: 0 5px 15px hsl(0, 0%, 0%, 15%);
+}
+
+/* layout styles */
+.header-nav {
+  justify-content: space-between;
+}
+
+header,
+main,
+footer {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+main {
+  margin-top: 4rem;
+}
+
+.info {
+  align-items: flex-start;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* general styles */
+.logo {
+  width: 8em;
+}
+
+header {
+  background: url(./assets/bg-hero-mobile.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: var(--clr-Very-Pale-Cyan);
+}
+
+.header-nav {
+  padding: 2rem 0;
+}
+
+.hero-content {
+  margin-top: 2rem;
+}
+
+.hero-section * + * {
+  margin-top: 1.5rem;
+}
+
+.block {
+  border-radius: 0.8rem;
+  padding: 2.5rem;
+  margin-top: 2rem;
+  box-shadow: 0 5px 15px hsl(0, 0%, 0%, 15%);
+}
+
+.call-to-action {
+  box-shadow: 0 5px 15px hsl(0, 0%, 0%, 15%);
+  padding: 3rem 0.5rem;
+  border-radius: 0.8rem;
+  margin-top: 8rem;
+  margin-bottom: -5rem;
+  background: var(--clr-Very-Pale-Cyan);
+
+  position: relative;
+  z-index: 2;
+}
+
+footer {
+  padding-top: 10rem;
+  padding-bottom: 5rem;
+  background: var(--clr-Very-Dark-Cyan);
+}
+
+.info img {
+  width: 1rem;
+  margin-top: 0.3rem;
+}
+
+.footer-nav * + *,
+.footer-row > * + * {
+  margin-top: 0.8rem;
+}
+
+/* media query */
+@media screen and (min-width: 800px) {
+  :root {
+    --fs-body: 1rem;
+  }
+
+  .flex-swap {
+    flex-direction: row-reverse;
+  }
+
+  img {
+    max-width: 50%;
+  }
+
+  header,
+  main,
+  footer {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+
+  header {
+    background: url(./assets/bg-hero-desktop.svg);
+    background-color: var(--clr-Very-Pale-Cyan);
+    padding-bottom: 4rem;
+  }
+
+  .hero-content,
+  .block-content {
+    text-align: left;
+  }
+
+  .hero-section {
+    gap: 4rem;
+    margin-top: 2rem;
+  }
+
+  .block-title {
+    font-size: 1.5rem;
+  }
+
+  .hero-section,
+  .block {
+    display: flex;
+    align-items: center;
+  }
+
+  .block > * {
+    flex-basis: 50%;
+  }
+
+  .block {
+    gap: 4rem;
+    padding-left: 5rem;
+  }
+
+  .call-to-action {
+    width: 40em;
+    margin-inline: auto;
+  }
+
+  .footer-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+
+  .footer-row > * {
+    flex-basis: 50%;
+  }
+
+  .footer-col--first {
+    flex-basis: 100%;
+  }
+}
